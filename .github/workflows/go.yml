@@ -36,9 +36,13 @@ jobs:
       run: go test -v main_test.go
   build:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ['ubuntu-latest', 'ubuntu-22.04']
     steps:
-    - uses: actions/checkout@v4    
+    - uses: actions/checkout@v4
+    
   
     - name: Build
       run: go build -v main.go

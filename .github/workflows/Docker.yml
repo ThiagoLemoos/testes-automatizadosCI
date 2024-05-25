@@ -2,7 +2,7 @@ name: Docker
 
 on:
   workflow_call:
-  
+
 jobs:
 
   docker:
@@ -15,7 +15,7 @@ jobs:
     - name: Docker Login 
       uses: docker/login-action@v2.0.0
       with: 
-        username:  thiagoLemoos
-        password:  ${{ secrets.PASSWORD }}
+        username: thiagoLemoos
+        password: ${{ secrets.PASSWORD }}
         
 
